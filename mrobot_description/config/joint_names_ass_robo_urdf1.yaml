@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'joint3_propeller_r', 'joint2_propeller_r', 'joint1_propeller_r', 'joint3_propeller_l', 'joint2_propeller_l', 'joint1_propeller_l', 'joint_b', ]

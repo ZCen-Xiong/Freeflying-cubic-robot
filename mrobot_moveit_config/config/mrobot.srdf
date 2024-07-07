@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="mrobot">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="fans">
+        <link name="base_link" />
+        <link name="link1_b" />
+        <link name="link_b" />
+        <link name="link3_propeller_l" />
+        <link name="link2_propeller_l" />
+        <link name="link1_propeller_l" />
+        <link name="link3_propeller_r" />
+        <link name="link2_propeller_r" />
+        <link name="link1_propeller_r" />
+        <joint name="joint_b" />
+        <joint name="joint3_propeller_l" />
+        <joint name="joint2_propeller_l" />
+        <joint name="joint1_propeller_l" />
+        <joint name="joint3_propeller_r" />
+        <joint name="joint2_propeller_r" />
+        <joint name="joint1_propeller_r" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="p1" group="fans">
+        <joint name="joint1_propeller_l" value="1.357" />
+        <joint name="joint1_propeller_r" value="1.8403" />
+        <joint name="joint2_propeller_l" value="1.0473" />
+        <joint name="joint2_propeller_r" value="1.8284" />
+        <joint name="joint3_propeller_l" value="0.5858" />
+        <joint name="joint3_propeller_r" value="1.2604" />
+        <joint name="joint_b" value="-0.0186" />
+    </group_state>
+
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="link1_b" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="link1_propeller_l" reason="Never" />
+    <disable_collisions link1="base_link" link2="link1_propeller_r" reason="Never" />
+    <disable_collisions link1="base_link" link2="link2_propeller_l" reason="Never" />
+    <disable_collisions link1="base_link" link2="link2_propeller_r" reason="Never" />
+    <disable_collisions link1="base_link" link2="link3_propeller_l" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="link3_propeller_r" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="link_b" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link1_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link1_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link2_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link2_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link3_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link3_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_b" link2="link_b" reason="Adjacent" />
+    <disable_collisions link1="link1_propeller_l" link2="link1_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_propeller_l" link2="link2_propeller_l" reason="Adjacent" />
+    <disable_collisions link1="link1_propeller_l" link2="link2_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_propeller_l" link2="link3_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_propeller_l" link2="link3_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_propeller_l" link2="link_b" reason="Never" />
+    <disable_collisions link1="link1_propeller_r" link2="link2_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_propeller_r" link2="link2_propeller_r" reason="Adjacent" />
+    <disable_collisions link1="link1_propeller_r" link2="link3_propeller_l" reason="Never" />
+    <disable_collisions link1="link1_propeller_r" link2="link3_propeller_r" reason="Never" />
+    <disable_collisions link1="link1_propeller_r" link2="link_b" reason="Never" />
+    <disable_collisions link1="link2_propeller_l" link2="link2_propeller_r" reason="Never" />
+    <disable_collisions link1="link2_propeller_l" link2="link3_propeller_l" reason="Adjacent" />
+    <disable_collisions link1="link2_propeller_l" link2="link3_propeller_r" reason="Never" />
+    <disable_collisions link1="link2_propeller_l" link2="link_b" reason="Never" />
+    <disable_collisions link1="link2_propeller_r" link2="link3_propeller_l" reason="Never" />
+    <disable_collisions link1="link2_propeller_r" link2="link3_propeller_r" reason="Adjacent" />
+    <disable_collisions link1="link2_propeller_r" link2="link_b" reason="Never" />
+    <disable_collisions link1="link3_propeller_l" link2="link3_propeller_r" reason="Never" />
+    <disable_collisions link1="link3_propeller_l" link2="link_b" reason="Never" />
+    <disable_collisions link1="link3_propeller_r" link2="link_b" reason="Never" />
+</robot>

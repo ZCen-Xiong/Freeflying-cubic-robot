@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>	
+
+	<!--start server -->
+	<node pkg="move_demo" type="arm_move.py" name= "arm_move" />
+    <node pkg="move_demo" type="robot_odom.py" name= "robot_odom" />
+    <node pkg="move_demo" type="visual_line.py" name= "visual_line" />
+
+</launch>

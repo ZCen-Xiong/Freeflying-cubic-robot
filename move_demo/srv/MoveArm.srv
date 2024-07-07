@@ -1,0 +1,4 @@
+# MoveArm.srv
+int32 type
+---
+bool result
