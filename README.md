@@ -1,4 +1,7 @@
-## Deployment Instructions ON neotic
+## Deployment Instructions on neotic
+
+![python](https://img.shields.io/badge/Python-v3.8-562aa2?logo=python&logoColor=ffffff)
+![cmake](https://img.shields.io/badge/Cmake-562aa2?logo=cmake)
 
 1. **Start the Gazebo Simulation**
 
@@ -24,3 +27,7 @@ This command will initiate the Gazebo simulation environment. Ensure that the Ga
    
        rosrun move_demo robot_teleop.py
    This command will start a Python script that allows for teleoperation of the MRobot within the simulation.
+
+## DEMO
+![gif](202402062130-small-original.gif)
+
