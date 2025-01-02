@@ -3,6 +3,17 @@
 ![python](https://img.shields.io/badge/Python-v3.8-562aa2?logo=python&logoColor=ffffff)
 ![cmake](https://img.shields.io/badge/Cmake-562aa2?logo=cmake)
 
+0. **Install MoveIt and roscontroller Packages**
+
+   Before starting the deployment, ensure that you have installed the necessary MoveIt and roscontroller packages. Use the following commands:
+
+   ```bash
+   sudo apt-get update
+   sudo apt-get install ros-noetic-moveit
+   sudo apt-get install ros-noetic-ros-controllers
+   ```
+
+
 1. **Start the Gazebo Simulation**
 
    Launch the Gazebo simulation for the MRobot using the following command:
